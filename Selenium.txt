@@ -1,0 +1,96 @@
+Selenium - Команды
+
+
+Локаторы
+Элемент Locators помогают Selenium идентифицировать элемент HTML, на который ссылается команда. Все эти локаторы можно идентифицировать с помощью плагина FirePath и FireBug Mozilla.
+
+identifier = id Выберите элемент с указанным атрибутом «id», а если нет совпадения, выберите первый элемент, атрибут @name которого - id.
+id = id Выберите элемент с указанным атрибутом id.
+name = name Выберите первый элемент с указанным атрибутом name
+dom = javascriptExpression Selenium находит элемент, оценивая указанную строку, которая позволяет нам перемещаться по объектной модели документа HTML с использованием JavaScript. Пользователи не могут вернуть значение, но могут оцениваться как выражение в блоке.
+xpath = xpathExpression Найдите элемент, используя выражение XPath.
+link = textPattern Выберите элемент ссылки (в тегах привязки), который содержит текст, соответствующий указанному шаблону.
+css = cssSelectorSyntax Выберите элемент с помощью селектора css.
+
+Actions
+Действия - это команды, которые управляют состоянием приложения. После выполнения, если действие не выполняется, выполнение текущего теста прекращается. 
+
+click (locator)	Щелчок по ссылке, кнопке, флажку или переключателю
+clickAt (locator,coordString)	Щелчок по элементу с помощью локатора и координат
+close()	Имитирует пользователя, нажимая кнопку «закрыть» в строке заголовка всплывающего окна или вкладки.
+contextMenuAt (locator,coordString)	Имитирует открытие контекстного меню указанного элемента из указанного местоположения
+doubleClick (locator)	Двойной щелчок на веб-элементе на основе указанного элемента.
+dragAndDrop (locator,movementsString)	Перетаскивает элемент, а затем отбрасывает его на заданное расстояние.
+dragAndDropToObject (Dragobject,dropobject)	Перетаскивает элемент и отбрасывает его на другой элемент.
+echo (message)	Распечатывает указанное сообщение на консоли, которое используется для отладки.
+fireEvent (locator,eventName)	Явно имитируйте событие, чтобы вызвать соответствующий обработчик «onevent»
+focus (locator)	Перемещение фокуса на указанный элемент
+highlight (locator)	Изменяет цвет фона указанного элемента на желтый. Коротко, что полезно для целей отладки.
+mouseDown (locator)	Имитирует пользователя, нажимая левую кнопку мыши на указанном элементе.
+mouseDownAt (locator,coordString)	Имитирует пользователя, нажимая левую кнопку мыши в указанном месте на указанном элементе.
+mouseUp (locator)	Имитирует событие, которое происходит, когда пользователь отпускает кнопку мыши
+mouseUpAt (locator,coordString)	Имитирует событие, которое происходит, когда пользователь отпускает кнопку мыши в указанном месте.
+open (url)	Открывает URL-адрес в указанном браузере и принимает как относительные, так и абсолютные URL-адреса.
+openWindow (url,windowID)	Открывает всплывающее окно. После открытия окна пользователю необходимо активировать его с помощью команды selectWindow.
+pause (waitTime)	Ожидает заданное время (в миллисекундах)
+refresh()	Имитирует пользователя, нажимая кнопку «Обновить» в своем браузере.
+select (selectLocator,optionLocator)	Выберите опцию из раскрывающегося списка с помощью локатора параметров.
+selectWindow (windowID)	Выбирает всплывающее окно с помощью локатора окон; как только всплывающее окно выбрано, все фокусы сдвигаются в это окно.
+store (expression,variableName)	Имя переменной, в которой должен быть сохранен результат, и выражение - это значение для хранения
+type (locator,value)	Устанавливает значение поля ввода, аналогичное действию ввода пользователя.
+typeKeys (locator,value)	Имитирует события нажатия клавиш на указанном элементе, как если бы вы набрали значение key-by-key.
+waitForCondition (script,timeout)	Выполняет указанный фрагмент JavaScript несколько раз, пока не будет оценен «true».
+waitForPageToLoad (timeout)	Ожидает загрузки новой страницы.
+waitForPopUp (windowID,timeout)	Ожидает появления и загрузки всплывающего окна.
+windowFocus()	Придает фокус выбранному окну
+windowMaximize()	Изменить размер выбранного окна, чтобы отобразить весь экран
+
+Accessors
+Аксессоры оценивают состояние приложения и сохраняют результаты в переменной, которая используется в утверждениях.
+
+assertErrorOnNext (message)	Pings Selenium ожидает ошибку при следующем выполнении команды с ожидаемым сообщением.
+storeAllButtons (variableName)	Возвращает идентификаторы всех кнопок на странице.
+storeAllFields (variableName)	Возвращает идентификаторы всех полей ввода на странице.
+storeAllLinks (variableName)	Возвращает идентификаторы всех ссылок на странице.
+storeAllWindowIds (variableName)	Возвращает идентификаторы всех окон, о которых браузер знает в массиве.
+storeAllWindowTitles (variableName)	Возвращает имена всех окон, о которых обозреватель знает в массиве.
+storeAllWindowNames (variableName)	Возвращает названия всех окон, о которых обозреватель знает в массиве.
+storeAttribute (attributeLocator, variableName)	Возвращает значение атрибута элемента. Значение атрибута может отличаться в разных браузерах.
+storeBodyText (variableName)	Получает весь текст страницы.
+storeConfirmation (variableName)	Извлекает сообщение диалогового окна подтверждения JavaScript, сгенерированного во время предыдущего действия.
+storeElementIndex (locator, variableName)	Получить относительный индекс элемента к его родительскому (начиная с 0).
+storeLocation (variableName)	Получает абсолютный URL текущей страницы.
+storeSelectedIds (selectLocator,variableName)	Получает все идентификаторы элементов для выбранных параметров в указанном элементе select или multi-select.
+storeSelectedIndex (selectLocator, variableName)	Возвращает индекс (номер опции, начиная с 0) для выбранного параметра в указанном элементе выбора.
+storeSelectedLabel (selectLocator, variableName)	Получает ярлык (видимый текст) для выбранного параметра в указанном элементе выбора.
+storeSelectedValue (selectLocator,variableName)	Возвращает значение (атрибут value) для выбранного параметра в указанном элементе select.
+storeSelectOptions (selectLocator,variableName)	Получает все метки в указанном выпадающем списке.
+storeTable (tableCellAddress, variableName)	Получает текст из ячейки таблицы. Синтаксис cellAddress: tableLocator.row.column, где строка и столбец начинаются с 0.
+storeText (locator, variableName)	Возвращает текст элемента. Это работает для любого элемента, содержащего текст.
+storeTitle (variableName)	Возвращает заголовок текущей страницы.
+storeValue (locator,variableName)	Получает (обрезанное пробелами) значение поля ввода.
+storeChecked (locator, variableName)	Возвращает, включена ли кнопка переключения (флажок / радио).
+storeElementPresent (locator, variableName)	Проверяет, что указанный элемент находится где-то на странице.
+storeTextPresent (pattern, variableName)	Проверяет, что указанный текстовый шаблон отображается где-то на отображаемой странице, отображаемой пользователю.
+storeVisible (locator, variableName)	Определяет, является ли указанный элемент видимым.
+
+Assertions
+Утверждения позволяют нам проверять состояние приложения и сравнивать с ожидаемым. Он используется в трех режимах, а именно: - утверждать (assert), проверять (verify) и ждать (waitfor).
+
+waitForErrorOnNext (message)	Ожидает ошибки; используется с accessor assertErrorOnNext.
+verifySelected(selectLocator, optionLocator)	Проверяет, что выбранная опция раскрывающегося списка удовлетворяет параметруSpecifier.
+waitForSelected (selectLocator, optionLocator)	Ожидает получения выбранной опции; используется с аксессуаром assertSelected.
+waitForNotSelected (selectLocator, optionLocator)	Ожидает, что выбор не будет выбран; используется с аксессуаром assertSelected.
+verifyAlert (pattern)	Проверяет текст предупреждения; используется с аксессуаром storeAlert.
+waitForAlert (pattern)	Ожидает оповещения; используется с хранилищем аксессуаров.
+verifyAllButtons (pattern)	Проверяет кнопку; используется с аксессуарами storeAllButtons.
+waitForAllButtons (pattern)	Ожидает нажатия кнопки; используется с аксессуарами storeAllButtons.
+verifyAllLinks (pattern)	Проверяет все ссылки; используется с хранилищем AccessAllLinks.
+waitForAllLinks (pattern)	Ожидает всех ссылок; используется с хранилищем AccessAllLinks.
+verifyAllWindowIds (pattern)	Проверяет идентификатор окна; используется с хранилищем AccessAllWindowIds.
+waitForAllWindowIds (pattern )	Ожидает идентификатор окна; используется с хранилищем AccessAllWindowIds.
+verifyAttribute(attributeLocator, pattern)	Проверяет атрибут элемента; используется с атрибутом storeAttribute.
+waitForAttribute(attributeLocator, pattern)	Ожидает атрибут элемента; используется с атрибутом storeAttribute.
+verifyBodyText(pattern)	Проверяет основной текст; используется с хранилищем-хранилищемBodyText.
+waitForBodyText(pattern)	Ожидает текст тела; используется с хранилищем-хранилищемBodyText.
+waitForConfirmation(pattern)	Ожидает подтверждения; используется с хранилищем аксессуаровConfirmationPresent.
